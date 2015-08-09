@@ -1,4 +1,6 @@
-This is your new Play application
-=================================
+In this repository i describe JPA 2.1 configuration in Play Framework 2.3 and 2.4 with or without Spring IoC container.
+The repository has 4 branches:
 
-This file will be packaged with your application, when using `activator dist`.
+-in master branch i use play 2.4 and jpa 2.1
+-in play23-jpa branch i play 2.3 and jpa 2.1
+-there are also two branches that configure play 2.3 with spring ioc container 4.0, one branch use spring for datasource and another use play for datasource management.
