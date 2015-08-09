@@ -12,7 +12,7 @@ import views.html.*;
 @Transactional
 public class Application extends Controller {
 
-    public Result index() {
+    public static Result index() {
         Task task = new Task();
         task.setTaskTitle("test task");
         JPA.em().persist(task);

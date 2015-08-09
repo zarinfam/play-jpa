@@ -12,9 +12,5 @@ libraryDependencies ++= Seq(
   javaWs,
   "mysql" % "mysql-connector-java" % "5.1.31",
   "org.hibernate" % "hibernate-entitymanager" % "4.3.8.Final", // replace by your jpa implementation
-  javaJpa
+  javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.0-api")
 )
-
-// Play provides two styles of routers, one expects its actions to be injected, the
-// other, legacy style, accesses its actions statically.
-routesGenerator := InjectedRoutesGenerator
