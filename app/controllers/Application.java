@@ -7,17 +7,25 @@ import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.*;
 
+import services.TaskService;
 import views.html.*;
 
-@Transactional
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
 public class Application extends Controller {
 
-    public static Result index() {
+    @Inject
+    private TaskService taskService;
+
+    public Result index() {
         Task task = new Task();
         task.setTaskTitle("test task");
-        JPA.em().persist(task);
 
-        task = JPA.em().find(Task.class, task.getId());
+        taskService.addTask(task);
+
+        task = taskService.getTask(task.getId());
 
         return ok(Json.toJson(task));
     }
